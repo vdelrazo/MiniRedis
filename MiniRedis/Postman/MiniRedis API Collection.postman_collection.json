@@ -1,0 +1,495 @@
+{
+	"info": {
+		"_postman_id": "d04fb4bd-ab5e-49b9-879a-a62cd825699e",
+		"name": "MiniRedis Full API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9022700"
+	},
+	"item": [
+		{
+			"name": "STRINGS",
+			"item": [
+				{
+					"name": "Set key (happy path)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"value\": \"valuea2\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/strings/key_one",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"strings",
+								"key_one"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get key simple",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/strings/key_one",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"strings",
+								"key_one"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete key simple",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/strings/key_one",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"strings",
+								"key_one"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Increment key",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/strings/key_incr/increment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"strings",
+								"key_incr",
+								"increment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get incr key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/strings/key_incr",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"strings",
+								"key_incr"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete key Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/strings/key_incr",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"strings",
+								"key_incr"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set with TTL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"key\": \"tempkey\",\n  \"value\": \"ttlval\",\n  \"ttlSeconds\": 300\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/strings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"strings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get key TTL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/strings/tempke",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"strings",
+								"tempke"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete temp key",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/strings/tempkey",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"strings",
+								"tempkey"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid key format",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"value\": \"value1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/strings/wrong_key!",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"strings",
+								"wrong_key!"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Missing key or value",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"value\": \"missingkey\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/strings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"strings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ZSets",
+			"item": [
+				{
+					"name": "ZADD (happy path)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"members\": [\n    { \"member\": \"Alice\", \"score\": 100 },\n    { \"member\": \"Bob\", \"score\": 200 },\n    { \"member\": \"Charlie\", \"score\": 150 }\n  ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/zsets/leaderboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"zsets",
+								"leaderboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ZCARD",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/zsets/leaderboard/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"zsets",
+								"leaderboard",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ZRANK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/zsets/leaderboard/rank/Bob",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"zsets",
+								"leaderboard",
+								"rank",
+								"Bob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ZRANGE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/zsets/leaderboard/range?start=0&stop=-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"zsets",
+								"leaderboard",
+								"range"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "0"
+								},
+								{
+									"key": "stop",
+									"value": "-1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ZADD invalid member",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"score\": 1738,\n  \"member\": \"John\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/zsets/leaderboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"zsets",
+								"leaderboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ZRANGE invalid params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/zsets/myzset/range?start=-1&stop=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"zsets",
+								"myzset",
+								"range"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "-1"
+								},
+								{
+									"key": "stop",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get DBSize",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dbsize",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbsize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/metrics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
