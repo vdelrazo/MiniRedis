@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "9yK1ioMXtoqKGYGqvOjWh1ng9cVETzxR46F/JA62+4g=",
+  "Source": "MiniRedis",
+  "BasePath": "_content/MiniRedis",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
