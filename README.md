@@ -70,7 +70,7 @@ Covers:
 | GET    | `/zsets/{key}/range?start=x&stop=y`| Get members by score range |
 
 Check out the postman collection added to the repo to easily use all features.
-[Postman collection](./Postman/MiniRedis%20API%20Collection.postman_collection.json).
+[Postman collection](./MiniRedis/Postman/MiniRedis%20API%20Collection.postman_collection.json).
 
 ---
 
